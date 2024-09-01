@@ -7,11 +7,11 @@ fn main() {
 
     println!("Digite o primeiro número:");
     io::stdin().read_line(&mut num1).expect("Erro");
-    let num1: f64 = num1.trim().parse().expect("Invalido");
+    let num1: i32 = num1.trim().parse().expect("Invalido");
 
     println!("Digite o segundo número:");
     io::stdin().read_line(&mut num2).expect("Erro");
-    let num2: f64 = num2.trim().parse().expect("Invalido");
+    let num2: i32 = num2.trim().parse().expect("Invalido");
 
     println!("Escolha a operação: Somar (+) ou multiplicar (*)");
     io::stdin().read_line(&mut opcao).expect("Erro.");
