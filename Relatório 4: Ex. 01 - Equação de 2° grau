@@ -12,9 +12,13 @@ func main() {
 	fmt.Scan(&a, &b, &c)
 
 	delta := b*b - 4*a*c
-	
+
 	x1 := (-b + math.Sqrt(delta)) / (2 * a)
 	x2 := (-b - math.Sqrt(delta)) / (2 * a)
 
-	fmt.Printf("As raízes da equação são: ", x1, x2)
-}	
+	if delta < 0{
+		fmt.Printf("Não existem raizes reais")
+	} else{
+		fmt.Printf("As raízes da equação são: %.2f e %.2f\n", x1, x2)
+	}
+}
