@@ -1,0 +1,73 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class pessoa {
+public:
+    int idade;
+    string nome;
+
+    // Construtor
+    pessoa(int idade, string nome) {
+        this->idade = idade;
+        this->nome = nome;
+    }
+
+    // Métodos virtuais
+    virtual string seu_nome(string nome_p) {
+        return "O nome é: " + nome_p;
+    }
+
+    virtual int sua_idade(int idade_p) {
+        return idade_p;
+    }
+};
+
+class aluno : public pessoa {
+private:
+    int matricula;
+
+public:
+    // Construtor herdado
+    aluno(int idade, string nome, int matricula) : pessoa(idade, nome) {
+        this->matricula = matricula;
+    }
+
+    // Sobrescrita do método sua_idade (se desejado, pode-se mudar o comportamento)
+    int sua_idade(int idade_p) override {
+        return pessoa::sua_idade(idade);
+    }
+
+    string seu_nome(string nome_p) override {
+        return pessoa::seu_nome(nome) + " Aluno, Matrícula: " + to_string(matricula);
+    }
+};
+
+class professor : public pessoa {
+public:
+    // Construtor herdado
+    professor(int idade, string nome) : pessoa(idade, nome) {}
+
+    // Sobrescrita do método sua_idade
+    int sua_idade(int idade_p) override {
+        return pessoa::sua_idade(idade);
+    }
+
+    string seu_nome(string nome_p) override {
+        return pessoa::seu_nome(nome) + " (Professor)";
+    }
+};
+
+int main() {
+    // Criando um aluno
+    aluno a1(19, "Pedro", 529);
+    cout << a1.seu_nome() << endl;
+    cout << "Idade: " << a1.sua_idade() << endl;
+
+    // Criando um professor
+    professor p1(32, "Marcelo");
+    cout << p1.seu_nome() << endl;
+    cout << "Idade: " << p1.sua_idade() << endl;
+
+    return 0;
+}
