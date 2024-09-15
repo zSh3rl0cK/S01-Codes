@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <locale.h>
 using namespace std;
 
 class pessoa {
@@ -14,12 +15,12 @@ public:
     }
 
     // Métodos virtuais
-    virtual string seu_nome(string nome_p) {
-        return "O nome é: " + nome_p;
+   string seu_nome() const {
+        return "O nome é: " + nome;
     }
 
-    virtual int sua_idade(int idade_p) {
-        return idade_p;
+   int sua_idade() const{
+        return idade;
     }
 };
 
@@ -32,42 +33,47 @@ public:
     aluno(int idade, string nome, int matricula) : pessoa(idade, nome) {
         this->matricula = matricula;
     }
-
-    // Sobrescrita do método sua_idade (se desejado, pode-se mudar o comportamento)
-    int sua_idade(int idade_p) override {
-        return pessoa::sua_idade(idade);
+	
+	string seu_nome() const override {
+        return "O nome do aluno é: " + nome;
     }
-
-    string seu_nome(string nome_p) override {
-        return pessoa::seu_nome(nome) + " Aluno, Matrícula: " + to_string(matricula);
-    }
+	
+	int getMat(){
+		return matricula;
+	}
 };
 
 class professor : public pessoa {
 public:
     // Construtor herdado
     professor(int idade, string nome) : pessoa(idade, nome) {}
-
-    // Sobrescrita do método sua_idade
-    int sua_idade(int idade_p) override {
-        return pessoa::sua_idade(idade);
-    }
-
-    string seu_nome(string nome_p) override {
-        return pessoa::seu_nome(nome) + " (Professor)";
+    
+    // Sobrescrevendo o método seu_nome para incluir "professor"
+    string seu_nome() const override {
+        return "O nome do professor é: " + nome;
     }
 };
 
 int main() {
+	setlocale(LC_ALL, "");
+	
     // Criando um aluno
     aluno a1(19, "Pedro", 529);
     cout << a1.seu_nome() << endl;
     cout << "Idade: " << a1.sua_idade() << endl;
+    cout << "Matrícula: " << a1.getMat() << endl;
 
     // Criando um professor
-    professor p1(32, "Marcelo");
-    cout << p1.seu_nome() << endl;
-    cout << "Idade: " << p1.sua_idade() << endl;
+    cout << endl;
+    professor pr1(32, "Marcelo");
+    cout << pr1.seu_nome() << endl;
+    cout << "Idade: " << pr1.sua_idade() << endl;
+    
+    // criando uma "pessoa"
+    cout << endl;
+    pessoa ps1(999, "cthulhu");
+    cout << ps1.seu_nome() << endl;
+    cout << "Idade: " << ps1.sua_idade() << endl;
 
     return 0;
 }
