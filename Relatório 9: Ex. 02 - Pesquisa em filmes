@@ -1,0 +1,129 @@
+1. Pesquisando os filmes de 2006
+
+movie(M, 2006).
+
+M = hail_caesar
+M = marie_antoinette
+M = paris_je_t_aime
+M = the_black_dahlia
+M = untitled_woody_allen_fall_project_2006
+M = a_view_from_the_bridge
+
+2. Pesquisando os filmes antes de 2001
+
+movie(M, Y), Y < 2001
+
+M = american_beauty,
+Y = 1999
+M = anna,
+Y = 1987
+M = barton_fink,
+Y = 1991
+M = the_big_lebowski,
+Y = 1998
+M = blade_runner,
+Y = 1997
+M = blood_simple,
+Y = 1984
+M = the_cotton_club,
+Y = 1984
+M = crimewave,
+Y = 1985
+M = down_from_the_mountain,
+Y = 2000
+M = fargo,
+Y = 1996
+M = the_firm,
+Y = 1993
+M = frankenweenie,
+Y = 1984
+M = ghost_busters,
+Y = 1984
+M = the_godfather,
+Y = 1972
+M = the_godfather_part_ii,
+Y = 1974
+M = the_godfather_part_iii,
+Y = 1990
+M = groundhog_day,
+Y = 1993
+M = hearts_of_darkness_a_filmmaker_s_apocalypse,
+Y = 1991
+M = the_hudsucker_proxy,
+Y = 1994
+M = inside_monkey_zetterland,
+Y = 1992
+M = lick_the_star,
+Y = 1998
+M = miller_s_crossing,
+Y = 1990
+M = mission_impossible,
+Y = 1996
+M = o_brother_where_art_thou,
+Y = 2000
+M = the_outsiders,
+Y = 1983
+M = peggy_sue_got_married,
+Y = 1986
+M = raising_arizona,
+Y = 1987
+M = rumble_fish,
+Y = 1983
+M = spies_like_us,
+Y = 1985
+M = star_wars_episode_i__the_phantom_menace,
+Y = 1999
+M = torrance_rises,
+Y = 1999
+M = the_usual_suspects,
+Y = 1995
+M = the_virgin_suicides,
+Y = 1999
+M = fall,
+Y = 1997
+M = ghost_world,
+Y = 2000
+M = if_lucy_fell,
+Y = 1996
+M = home_alone_3,
+Y = 1997
+M = the_horse_whisperer,
+Y = 1998
+M = just_cause,
+Y = 1995
+M = manny__lo,
+Y = 1996
+M = my_brother_the_pig,
+Y = 1999
+M = north,
+Y = 1994
+
+3. Pesquisando os filmes lançados em 2006 ou 2000
+
+movie(M, Y), (Y = 2000; Y = 2006).
+
+M = down_from_the_mountain,
+Y = 2000
+M = hail_caesar,
+Y = 2006
+M = marie_antoinette,
+Y = 2006
+M = o_brother_where_art_thou,
+Y = 2000
+M = paris_je_t_aime,
+Y = 2006
+M = the_black_dahlia,
+Y = 2006
+M = ghost_world,
+Y = 2000
+M = untitled_woody_allen_fall_project_2006,
+Y = 2006
+M = a_view_from_the_bridge,
+Y = 2006
+
+
+4. Pesquisando o ano de lançamento de the godfather part iii
+
+movie(the_godfather_part_iii, Y).
+
+Y = 1990
