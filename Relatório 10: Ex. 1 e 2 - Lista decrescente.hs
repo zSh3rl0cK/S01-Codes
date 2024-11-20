@@ -5,11 +5,11 @@ exerc1 :: Int -> Int
 exerc1 x = 3*x
 
 -- funcao para calcular o fatorial (caso o numero seja maior que 0) ou multiplicar por 2 (caso não seja)
-exerc2 :: Int -> int
+exerc2 :: Int -> Int
 exerc2 num
   | num == 0 = 1
   | num > 0 = num * exerc2(num - 1)
-  | otherwise num * 2
+  | otherwise = num * 2
 
 main = do
   let lista = [30,29..1]
@@ -22,8 +22,5 @@ main = do
 
   -- lendo um numero para utizar na funcao 2
   N <- getLine
-  
-  let N = read N
-
   -- imprimindo o fatorial ou o numero vezes 2
   print(exerc2 N)
