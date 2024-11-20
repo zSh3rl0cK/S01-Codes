@@ -23,4 +23,4 @@ main = do
   -- lendo um numero para utizar na funcao 2
   N <- getLine
   -- imprimindo o fatorial ou o numero vezes 2
-  print(exerc2 N)
+  print(exerc2 (read N :: Int))
